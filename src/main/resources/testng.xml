@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="classes" thread-count="3">
+    <!--parallel表示你需要对哪个级别进行多线程，比如methods表示将把每个<class>标签内的所有方法在同一个线程中执行，但是<classes>中的不同<class>讲会以不同的线程执行
+        thread-count表示线程个数
+    -->
+    <test verbose="2" preserve-order="true" name="TestDebug">
+        <classes>
+            <class name="com.test.main.Seleniumtest" />
+        </classes>
+    </test> <!-- Test -->
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+</suite> <!-- Suite -->
